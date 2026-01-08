@@ -1,6 +1,6 @@
-package org.hillcrest.chapter6.password;
+package java.org.hillcrest.chapter6.password;
 
-public class PasswordCheckerApp {
+public class PasswordApp {
     //main method goes here
     //prompt user for password
     //Check strength
