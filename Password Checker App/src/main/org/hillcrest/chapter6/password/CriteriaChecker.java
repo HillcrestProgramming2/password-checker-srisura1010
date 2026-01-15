@@ -70,4 +70,5 @@ public class CriteriaChecker {
     public static boolean getSpecial() {return hasSpecial;}
     public static boolean getLower() {return hasLower;}
     public static boolean getLengthMet() {return hasLengthRequirement;}
+
 }
