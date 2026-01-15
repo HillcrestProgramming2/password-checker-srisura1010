@@ -1,4 +1,4 @@
-package java.org.hillcrest.chapter6.password;
+package org.hillcrest.chapter6.password;
 
 public class CriteriaChecker {
 
@@ -13,11 +13,17 @@ public class CriteriaChecker {
 
     public static int evaluateCriteria(String password) {
 
+        hasUpper = false;
+        hasLower = false;
+        hasDigit = false;
+        hasSpecial = false;
+        hasLengthRequirement = false;
+
         int criteriaMet = 0;
         String specialChars = "!@#$%^&*()-+=";
 
 
-        for(int i=0; i<=password.length(); i++) {
+        for(int i=0; i<password.length(); i++) {
             char c = password.charAt(i);
 
             if (Character.isUpperCase(c)) {
@@ -29,12 +35,13 @@ public class CriteriaChecker {
             if (Character.isDigit(c)) {
                 hasDigit = true;
             }
-            if (specialChars.charAt(c) >= 0) {
+            if (specialChars.indexOf(c) >= 0) {
                 hasSpecial = true;
             }
-            if (password.length()>=8) {
-                hasLengthRequirement = true;
-            }
+        }
+
+        if (password.length()>=8) {
+            hasLengthRequirement = true;
         }
 
         if (hasUpper) criteriaMet++;
